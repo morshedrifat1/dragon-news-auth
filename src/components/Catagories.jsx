@@ -8,7 +8,7 @@ const Catagories = () => {
       <div>
         <h2 className="text-primary text-lg font-semibold">All Caterogy</h2>
         <ul className="space-y-2 mt-5">
-          {categories.map((categorie) => (
+          {categories?.map((categorie) => (
             <li key={categorie.id}>
               <NavLink to={`/category/${categorie.id}`}>
                 {({ isActive }) => (

@@ -22,14 +22,14 @@ import PrivateRoute from "../provider/PrivateRoute";
              <span className="loading loading-bars loading-xl"></span>
            </div>
          ),
-         loader: () => fetch("news.json"),
+         loader: () => fetch("/news.json"),
        },
      ],
    },
    {
     path: "news-details/:id/",
     element:<PrivateRoute><NewsDetails></NewsDetails></PrivateRoute>,
-    loader: () => fetch("news.json"),
+    loader: () => fetch("/news.json"),
    },
    {
      path: "auth",

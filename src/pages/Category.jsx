@@ -13,19 +13,19 @@ const Category = () => {
             return
         }
         else if(id==1){
-            const todayNews = allNews.filter(news=>news.others.is_today_pick===true);
+            const todayNews = allNews?.filter(news=>news.others.is_today_pick===true);
             setCatagoryNews(todayNews);
             return
         }
         else{
-            const filterNews = allNews.filter(news=>news.category_id===parseInt(id));
+            const filterNews = allNews?.filter(news=>news.category_id===parseInt(id));
             setCatagoryNews(filterNews)
         }
 
     },[id,allNews])
     return (
       <div className='space-y-10'>
-        {catagoryNews.map((newsData,index) => (
+        {catagoryNews?.map((newsData,index) => (
           <NewsCard key={index} newsData={newsData}></NewsCard>
         ))}
       </div>

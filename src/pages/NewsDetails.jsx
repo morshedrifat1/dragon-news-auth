@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLoaderData, useParams } from 'react-router';
+import { useLoaderData, useParams } from 'react-router';
 import Header from '../components/Header';
 import RightAside from '../components/HomeComponent/RightAside';
-import { GoArrowLeft } from 'react-icons/go';
 import NewsDetailsCard from '../components/NewsDetailsCard';
-import Navbar from '../components/Navbar';
 
 const NewsDetails = () => {
     const newsDatas = useLoaderData()
     const {id} = useParams();
     const [news,setNews] = useState({});
     useEffect(()=>{
-        const data = newsDatas.find(news=>news.id===id);
+        const data = newsDatas?.find(news=>news.id===id);
         setNews(data)
 
     },[id,newsDatas])
